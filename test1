@@ -1,2 +1,7 @@
 I am test1.
+<<<<<<< HEAD
 I am in test.
+=======
+I am in b1 branch.
+I am in b1, that's for sure.
+>>>>>>> b1
