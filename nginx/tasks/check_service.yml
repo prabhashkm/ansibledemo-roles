@@ -1,0 +1,17 @@
+---
+- name: This describes how to check status of nginx service.
+  hosts: all
+  gather_facts: yes
+  become: true
+  become_method: sudo
+
+  tasks:
+  - name: starting nginx service
+    command: service nginx status
+    register: status_result
+
+  - name: status_result
+    debug: msg="{{status_result.stdout}}"
+    debug: msg="{{status_result.stderr}}"
+    
+...

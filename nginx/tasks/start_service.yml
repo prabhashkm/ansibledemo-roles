@@ -1,0 +1,13 @@
+---
+- name: This describes how to start nginx service.
+  hosts: all
+  gather_facts: yes
+  become: true
+  become_method: sudo
+
+  tasks:
+  - name: starting nginx service
+    service:
+      name: nginx
+      state: started
+...

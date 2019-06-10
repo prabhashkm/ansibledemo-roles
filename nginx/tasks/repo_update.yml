@@ -1,0 +1,15 @@
+---
+- name: This describes the system repo databases.
+  hosts: all
+  gather_facts: yes
+  become: true
+  become_method: sudo
+
+  tasks:
+  - name: Running a system update
+    command: yum update -y
+    when: ansible_os_family == "Redhat"
+
+    command: apt-get update -y
+    when: ansible_os_family == "Debian"
+...
