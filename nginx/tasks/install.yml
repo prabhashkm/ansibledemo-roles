@@ -1,0 +1,13 @@
+---
+- name: This describes how to install official nginx package
+  hosts: all
+  gather_facts: yes
+  become: yes
+  become-method: sudo
+  
+  tasks:
+  - name: Installing nginx package
+    package:
+      name: nginx
+      state: latest
+...

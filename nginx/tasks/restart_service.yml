@@ -1,0 +1,13 @@
+---
+- name: This describes how to restart nginx service.
+  hosts: all
+  gather_facts: yes
+  become: true
+  become_method: sudo
+
+  tasks:
+  - name: Restarting nginx service
+    service:
+      name: nginx
+      state: restarted
+...
